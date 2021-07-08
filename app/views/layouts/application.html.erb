@@ -4,12 +4,25 @@
     <title>Tclone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div id="wrap">
+      <header>
+        <ul>
+          <li><%= link_to 'つぶやき一覧', posts_path %></li>
+          <li><%= link_to 'つぶやく', new_post_path %></li>
+        </ul>
+      </header>
+      <div id="contents">
+        <%= yield %>
+      </div>
+        <footer>
+          <p>ツイートアプリ</p>
+        </footer>
+      </div>
   </body>
 </html>
